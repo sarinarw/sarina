@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+<article>
+  <header class="mb-10">
+    <div class="flex items-center gap-2 text-sm text-text-muted mb-3">
+      <a href="/blog/{{ topic }}/" class="text-accent hover:text-accent-hover no-underline font-medium capitalize transition-colors">
+        {{ topic }}
+      </a>
+      <span aria-hidden="true">·</span>
+      <time datetime="{{ date | isoDate }}">{{ date | postDate }}</time>
+    </div>
+    <h1 class="font-serif text-4xl font-bold text-text-primary leading-tight mb-4">{{ title }}</h1>
+    {% if description %}
+    <p class="text-xl text-text-muted leading-relaxed">{{ description }}</p>
+    {% endif %}
+    <div class="flex flex-wrap gap-2 mt-5">
+      {% for tag in tags %}{% if tag != "posts" %}
+      <a href="/tags/{{ tag }}/" class="inline-block px-2.5 py-0.5 bg-surface text-accent text-xs font-medium rounded-full border border-border hover:bg-accent hover:text-white transition-colors no-underline">
+        {{ tag }}
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+  </header>
+
+  <div class="prose-content">
+    {{ content | safe }}
+  </div>
+
+  <footer class="mt-12 pt-8 border-t border-border">
+    <a href="/blog/{{ topic }}/" class="text-accent hover:text-accent-hover no-underline text-sm font-medium transition-colors">
+      ← More {{ topic }} posts
+    </a>
+  </footer>
+</article>
