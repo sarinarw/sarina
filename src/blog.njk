@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+title: Blog
+pagination:
+  data: collections.posts
+  size: 10
+  alias: paginatedPosts
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+<header class="mb-10">
+  <h1 class="font-serif text-4xl font-bold text-text-primary mb-4">Blog</h1>
+  {% if collections.topicList.length > 0 %}
+  <div class="flex flex-wrap gap-2">
+    {% for topic in collections.topicList %}
+    <a href="/blog/{{ topic }}/" class="inline-block px-3 py-1 bg-surface text-text-muted text-sm rounded-full border border-border hover:border-accent hover:text-accent transition-colors no-underline capitalize">
+      {{ topic }}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</header>
+
+{% if paginatedPosts.length == 0 %}
+  <p class="text-text-muted">No posts yet.</p>
+{% else %}
+  <ul class="space-y-0 list-none p-0 m-0 divide-y divide-border">
+    {% for post in paginatedPosts %}
+    <li class="py-8 first:pt-0">
+      <div class="flex items-center gap-2 text-sm text-text-muted mb-1.5">
+        <a href="/blog/{{ post.data.topic }}/" class="text-accent hover:text-accent-hover no-underline font-medium capitalize transition-colors">
+          {{ post.data.topic }}
+        </a>
+        <span aria-hidden="true">·</span>
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate }}</time>
+      </div>
+      <h2 class="font-serif text-2xl font-semibold mb-2">
+        <a href="{{ post.url }}" class="text-text-primary hover:text-accent no-underline transition-colors">
+          {{ post.data.title }}
+        </a>
+      </h2>
+      {% if post.data.description %}
+      <p class="text-text-muted mb-3 leading-relaxed">{{ post.data.description }}</p>
+      {% endif %}
+      <div class="flex flex-wrap gap-2">
+        {% for tag in post.data.tags %}{% if tag != "posts" %}
+        <a href="/tags/{{ tag }}/" class="inline-block px-2.5 py-0.5 bg-surface text-accent text-xs font-medium rounded-full border border-border hover:bg-accent hover:text-white transition-colors no-underline">
+          {{ tag }}
+        </a>
+        {% endif %}{% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% if pagination.pages.length > 1 %}
+  <nav class="mt-10 flex justify-between text-sm" aria-label="Pagination">
+    {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}" class="text-accent hover:text-accent-hover no-underline font-medium transition-colors">← Newer posts</a>
+    {% else %}<span></span>{% endif %}
+    {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}" class="text-accent hover:text-accent-hover no-underline font-medium transition-colors">Older posts →</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+{% endif %}
