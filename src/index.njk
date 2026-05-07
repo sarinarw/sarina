@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+<section class="mb-14">
+  <h1 class="font-serif text-4xl font-bold text-text-primary mb-4">
+    Hi, I'm {{ site.author }}
+  </h1>
+  <p class="text-xl text-text-muted leading-relaxed max-w-prose">
+    {{ site.description }}
+  </p>
+</section>
+
+<section>
+  <div class="flex items-baseline justify-between mb-6">
+    <h2 class="font-serif text-2xl font-semibold text-text-primary">Recent Writing</h2>
+    <a href="/blog/" class="text-sm text-accent hover:text-accent-hover no-underline font-medium transition-colors">All posts →</a>
+  </div>
+
+  {% set recentPosts = collections.posts | slice(0, 5) %}
+
+  {% if recentPosts.length == 0 %}
+    <p class="text-text-muted">No posts yet. Check back soon.</p>
+  {% else %}
+    <ul class="space-y-0 list-none p-0 m-0 divide-y divide-border">
+      {% for post in recentPosts %}
+      <li class="py-6 first:pt-0">
+        <div class="flex items-center gap-2 text-sm text-text-muted mb-1.5">
+          <a href="/blog/{{ post.data.topic }}/" class="text-accent hover:text-accent-hover no-underline font-medium capitalize transition-colors">
+            {{ post.data.topic }}
+          </a>
+          <span aria-hidden="true">·</span>
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate }}</time>
+        </div>
+        <h3 class="font-serif text-xl font-semibold mb-1">
+          <a href="{{ post.url }}" class="text-text-primary hover:text-accent no-underline transition-colors">
+            {{ post.data.title }}
+          </a>
+        </h3>
+        {% if post.data.description %}
+        <p class="text-text-muted text-sm leading-relaxed">{{ post.data.description }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>
