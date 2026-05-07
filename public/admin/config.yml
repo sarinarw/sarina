@@ -2,35 +2,66 @@ backend:
   name: git-gateway
   branch: master
 
-# publish_mode: editorial_workflow
-media_folder: 'src/assets/images/posts' # Media files will be stored in the repo under src/assets/images/posts
-public_folder: '/assets/images/posts' # The src attribute for uploaded media will begin with assets/images/posts
+media_folder: 'public/assets/images'
+public_folder: '/assets/images'
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "src/posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/blog"
+    create: true
+    nested:
+      depth: 2
+    slug: "{{slug}}"
     editor:
-      preview: false # Disable the editor preview and use instead 'preview links'
-    fields: # The fields for each document, usually in front matter
-      - { name: "title", label: "Title" }
-      - { name: "description", label: "Description" }
-      - { name: "date", label: "Date", widget: "datetime" }
+      preview: false
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { name: "topic", label: "Topic", widget: "string", hint: "Top-level section, e.g. tech, gardening" }
+      - name: "tags"
+        label: "Tags"
+        widget: "list"
+        hint: "Fine-grained labels within the topic, e.g. rust, composting"
+        required: false
       - { name: "body", label: "Body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "src/projects"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "string", hint: "One-line summary shown on the card" }
+      - { name: "url", label: "URL", widget: "string", required: false, hint: "Optional link to project" }
+      - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - name: "status"
+        label: "Status"
+        widget: "select"
+        options: ["active", "completed", "archived"]
+        default: "active"
+      - name: "tags"
+        label: "Tags"
+        widget: "list"
+        required: false
+      - { name: "body", label: "Body", widget: "markdown", required: false }
+
   - name: "config"
-    label: "Configuration"
+    label: "Site Config"
     editor:
       preview: false
     files:
       - name: "global"
-        label: "Global"
+        label: "Global Settings"
         file: "src/_data/site.json"
         fields:
-          - { name: "site_name", label: "Site name" }
-          - { name: "title", label: "Site title" }
-          - { name: "description", label: "Site description" }
-          - { name: "url", label: "Site url" }
-          - { name: "locale", label: "Language" }
-          - { name: "author", label: "Author" }
+          - { name: "site_name", label: "Site Name" }
+          - { name: "title", label: "Site Title" }
+          - { name: "description", label: "Site Description" }
+          - { name: "url", label: "Site URL" }
+          - { name: "locale", label: "Locale" }
+          - { name: "author", label: "Author Name" }
