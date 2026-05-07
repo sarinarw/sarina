@@ -1,8 +1,11 @@
 {
-  "site_name": "Starter",
-  "title": "Eleventy Starter Boilerplate",
-  "description": "Starter code for your 11ty blog Boilerplate",
-  "url": "https://example.com",
+  "site_name": "Sarina White",
+  "title": "Sarina White — Writing & Projects",
+  "description": "Research and writing on tech, gardening, and other things I'm curious about.",
+  "url": "https://sarinawhite.com",
   "locale": "en",
-  "author": "Anonymous"
+  "author": "Sarina White",
+  "social": {
+    "github": "https://github.com/sarinarw"
+  }
 }
