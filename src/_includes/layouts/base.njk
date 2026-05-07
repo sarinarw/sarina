@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <title>{% if title and title != site.site_name %}{{ title }} — {{ site.site_name }}{% else %}{{ site.site_name }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}" />
+  <meta name="author" content="{{ site.author }}" />
+
+  <meta property="og:title" content="{{ title or site.site_name }}" />
+  <meta property="og:description" content="{{ description or site.description }}" />
+  <meta property="og:locale" content="{{ site.locale }}" />
+  <meta property="og:site_name" content="{{ site.site_name }}" />
+
+  {% if layout == "layouts/post.njk" %}
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="{{ date | isoDate }}" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title }}",
+    "description": "{{ description or site.description }}",
+    "author": { "@type": "Person", "name": "{{ site.author }}" },
+    "url": "{{ site.url }}{{ page.url }}",
+    "datePublished": "{{ date | isoDate }}"
+  }
+  </script>
+  {% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/main.css" />
+
+  {% if pagefind %}
+  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
+  {% endif %}
+
+  {% if page.url == "/" %}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {% endif %}
+</head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col">
+  {% include "components/nav.njk" %}
+
+  <main class="max-w-2xl mx-auto px-6 py-12 flex-1 w-full">
+    {{ content | safe }}
+  </main>
+
+  <footer class="border-t border-border py-8 mt-8">
+    <div class="max-w-2xl mx-auto px-6 flex items-center justify-between text-sm text-text-muted">
+      <p>© {{ currentYear }} {{ site.author }}</p>
+      <nav class="flex gap-4">
+        {% if site.social.github %}
+        <a href="{{ site.social.github }}" class="no-underline hover:text-text-primary transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {% endif %}
+        <a href="/sitemap.xml" class="no-underline hover:text-text-primary transition-colors">Sitemap</a>
+      </nav>
+    </div>
+  </footer>
+
+  {% if pagefind %}
+  <script src="/_pagefind/pagefind-ui.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      new PagefindUI({ element: "#search", showSubResults: true });
+    });
+  </script>
+  {% endif %}
+
+  {% if page.url == "/" %}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', (user) => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
+  {% endif %}
+</body>
+</html>
