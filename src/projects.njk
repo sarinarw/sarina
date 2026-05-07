@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: Projects
+permalink: /projects/
+---
+<header class="mb-10">
+  <h1 class="font-serif text-4xl font-bold text-text-primary mb-2">Projects</h1>
+  <p class="text-text-muted">Things I've built, researched, and explored.</p>
+</header>
+
+{% if collections.projects.length == 0 %}
+  <p class="text-text-muted">No projects yet.</p>
+{% else %}
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    {% for project in collections.projects %}
+    <article class="bg-surface border border-border rounded-xl p-6 flex flex-col">
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <h2 class="font-serif text-xl font-semibold text-text-primary leading-tight">
+          {{ project.data.title }}
+        </h2>
+        <span class="text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0
+          {% if project.data.status == 'active' %}bg-green-100 text-green-700
+          {% elif project.data.status == 'completed' %}bg-blue-100 text-blue-700
+          {% else %}bg-surface text-text-muted border border-border{% endif %}">
+          {{ project.data.status }}
+        </span>
+      </div>
+      <p class="text-text-muted text-sm leading-relaxed flex-1 mb-5">
+        {{ project.data.description }}
+      </p>
+      <div class="flex items-center justify-between mt-auto">
+        {% if project.data.url %}
+        <a href="{{ project.data.url }}" class="text-accent hover:text-accent-hover no-underline text-sm font-medium transition-colors" target="_blank" rel="noopener noreferrer">
+          View →
+        </a>
+        {% else %}
+        <span></span>
+        {% endif %}
+        <time class="text-xs text-text-muted">{{ project.date | postDate }}</time>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+{% endif %}
