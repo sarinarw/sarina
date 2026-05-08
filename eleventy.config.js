@@ -16,29 +16,28 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("filterByTopic", filterByTopic);
   eleventyConfig.addFilter("topicIcon", topicIcon);
 
-  eleventyConfig.addCollection("posts", (collectionApi) => {
-    const now = new Date();
-    return collectionApi
-      .getFilteredByGlob("src/blog/**/*.md")
-      .filter((p) => p.date <= now)
-      .sort((a, b) => b.date - a.date);
-  });
+  // Compare post dates against today in Phoenix time (MST, UTC-7, no DST).
+  // Eleventy parses frontmatter dates as midnight UTC, so a naive `date <= now`
+  // comparison fails in the evening when UTC has already rolled to the next day.
+  const todayPhoenix = new Date().toLocaleDateString("en-CA", {
+    timeZone: "America/Phoenix",
+  }); // "YYYY-MM-DD"
+  const isPublished = (p) => p.date.toISOString().split("T")[0] <= todayPhoenix;
 
-  eleventyConfig.addCollection("topicList", (collectionApi) => {
-    const now = new Date();
-    const published = collectionApi
+  eleventyConfig.addCollection("posts", (collectionApi) =>
+    collectionApi
       .getFilteredByGlob("src/blog/**/*.md")
-      .filter((p) => p.date <= now);
-    return uniqueTopics(published);
-  });
+      .filter(isPublished)
+      .sort((a, b) => b.date - a.date)
+  );
 
-  eleventyConfig.addCollection("tagList", (collectionApi) => {
-    const now = new Date();
-    const published = collectionApi
-      .getFilteredByGlob("src/blog/**/*.md")
-      .filter((p) => p.date <= now);
-    return uniqueTags(published);
-  });
+  eleventyConfig.addCollection("topicList", (collectionApi) =>
+    uniqueTopics(collectionApi.getFilteredByGlob("src/blog/**/*.md").filter(isPublished))
+  );
+
+  eleventyConfig.addCollection("tagList", (collectionApi) =>
+    uniqueTags(collectionApi.getFilteredByGlob("src/blog/**/*.md").filter(isPublished))
+  );
 
   eleventyConfig.addCollection("projects", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/projects/*.md").sort((a, b) => b.date - a.date)

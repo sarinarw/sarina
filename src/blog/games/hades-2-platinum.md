@@ -1,7 +1,7 @@
 ---
 title: Hades 2 platinum — 80 hours, 2.5 weeks, PS5
 description: Notes on getting the Hades 2 platinum trophy, coming in with Hades 1 experience and still getting absolutely destroyed.
-date: 2026-05-07
+date: 2026-05-08
 topic: games
 tags: [hades, playstation, platinum, roguelike]
 ---
@@ -27,6 +27,14 @@ Beyond those two: just play like Hades 1. Try every weapon. Try every god's boon
 Eighty hours over 2.5 weeks is honestly not that bad for a roguelike platinum. Most of it didn't feel like grinding — it felt like playing. The checklist nature of prophecies (Hades 2's version of the codex objectives) gives you something to orient toward when you don't have a specific goal in mind, which kept it from feeling aimless.
 
 The last stretch of cleanup was the most tedious, as it always is with platinums, but nothing was unreasonably obscure. If you're stuck on what to do, read through your prophecies.
+
+## Ratings
+
+**Graphics: 8/10** — Really beautiful art style. There were some inconsistencies in how characters are represented that bugged me, but overall it looks great.
+
+**Gameplay: 9/10** — Smooth, just like Hades 1. Some weapons lean heavily on button spam, which started hurting my hand after a while. The saving grace is there are less-spammy options, so you can adjust. Full voice acting for all the dialogue lines is a nice touch.
+
+**Story and characters: 6/10** — I found the dialogue pretty boring and didn't connect much with the characters. The story was okay. Not why I was here.
 
 ## Worth it?
 
