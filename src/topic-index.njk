@@ -8,7 +8,7 @@ permalink: /blog/{{ topic }}/
 eleventyComputed:
   title: "{{ topic | capitalize }}"
 ---
-{% set topicPosts = collections.posts | selectattr("data.topic", "equalto", topic) %}
+{% set topicPosts = collections.posts | filterByTopic(topic) %}
 
 <header class="mb-10">
   <p class="text-sm text-text-muted mb-2">

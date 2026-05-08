@@ -15,4 +15,8 @@ function limit(arr, n) {
   return arr.slice(0, n);
 }
 
-module.exports = { postDate, isoDate, limit };
+function filterByTopic(posts, topic) {
+  return posts.filter((post) => post.data.topic === topic);
+}
+
+module.exports = { postDate, isoDate, limit, filterByTopic };

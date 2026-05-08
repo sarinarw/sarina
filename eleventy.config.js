@@ -1,5 +1,5 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { postDate, isoDate, limit } = require("./src/filters");
+const { postDate, isoDate, limit, filterByTopic } = require("./src/filters");
 const { uniqueTopics, uniqueTags } = require("./src/collections");
 
 module.exports = function (eleventyConfig) {
@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("postDate", postDate);
   eleventyConfig.addFilter("isoDate", isoDate);
   eleventyConfig.addFilter("limit", limit);
+  eleventyConfig.addFilter("filterByTopic", filterByTopic);
 
   eleventyConfig.addCollection("posts", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/blog/**/*.md").sort((a, b) => b.date - a.date)

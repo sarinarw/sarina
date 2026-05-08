@@ -1,4 +1,4 @@
-const { postDate, isoDate, limit } = require("../src/filters");
+const { postDate, isoDate, limit, filterByTopic } = require("../src/filters");
 
 describe("postDate", () => {
   test("formats a Date object as human-readable string", () => {
@@ -35,5 +35,28 @@ describe("limit", () => {
 
   test("returns empty array when N is 0", () => {
     expect(limit([1, 2, 3], 0)).toEqual([]);
+  });
+});
+
+describe("filterByTopic", () => {
+  const posts = [
+    { data: { topic: "tech", title: "A" } },
+    { data: { topic: "gardening", title: "B" } },
+    { data: { topic: "tech", title: "C" } },
+  ];
+
+  test("returns only posts matching the topic", () => {
+    expect(filterByTopic(posts, "tech")).toEqual([
+      { data: { topic: "tech", title: "A" } },
+      { data: { topic: "tech", title: "C" } },
+    ]);
+  });
+
+  test("returns empty array when no posts match", () => {
+    expect(filterByTopic(posts, "cooking")).toEqual([]);
+  });
+
+  test("returns empty array for empty input", () => {
+    expect(filterByTopic([], "tech")).toEqual([]);
   });
 });
