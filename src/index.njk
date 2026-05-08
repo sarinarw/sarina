@@ -27,7 +27,7 @@ title: Home
       <li class="py-6 first:pt-0">
         <div class="flex items-center gap-2 text-sm text-text-muted mb-1.5">
           <a href="/blog/{{ post.data.topic }}/" class="text-accent hover:text-accent-hover no-underline font-medium capitalize transition-colors">
-            {{ post.data.topic }}
+            {{ post.data.topic | topicIcon }} {{ post.data.topic }}
           </a>
           <span aria-hidden="true">·</span>
           <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate }}</time>

@@ -19,4 +19,9 @@ function filterByTopic(posts, topic) {
   return posts.filter((post) => post.data.topic === topic);
 }
 
-module.exports = { postDate, isoDate, limit, filterByTopic };
+function topicIcon(topic) {
+  const icons = { tech: "💻", gardening: "🌱" };
+  return icons[topic] || "";
+}
+
+module.exports = { postDate, isoDate, limit, filterByTopic, topicIcon };

@@ -1,4 +1,4 @@
-const { postDate, isoDate, limit, filterByTopic } = require("../src/filters");
+const { postDate, isoDate, limit, filterByTopic, topicIcon } = require("../src/filters");
 
 describe("postDate", () => {
   test("formats a Date object as human-readable string", () => {
@@ -58,5 +58,19 @@ describe("filterByTopic", () => {
 
   test("returns empty array for empty input", () => {
     expect(filterByTopic([], "tech")).toEqual([]);
+  });
+});
+
+describe("topicIcon", () => {
+  test("returns computer emoji for tech", () => {
+    expect(topicIcon("tech")).toBe("💻");
+  });
+
+  test("returns sapling emoji for gardening", () => {
+    expect(topicIcon("gardening")).toBe("🌱");
+  });
+
+  test("returns empty string for unknown topic", () => {
+    expect(topicIcon("cooking")).toBe("");
   });
 });

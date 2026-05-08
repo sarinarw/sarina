@@ -5,7 +5,7 @@ layout: layouts/base.njk
   <header class="mb-10">
     <div class="flex items-center gap-2 text-sm text-text-muted mb-3">
       <a href="/blog/{{ topic }}/" class="text-accent hover:text-accent-hover no-underline font-medium capitalize transition-colors">
-        {{ topic }}
+        {{ topic | topicIcon }} {{ topic }}
       </a>
       <span aria-hidden="true">·</span>
       <time datetime="{{ date | isoDate }}">{{ date | postDate }}</time>
@@ -29,7 +29,7 @@ layout: layouts/base.njk
 
   <footer class="mt-12 pt-8 border-t border-border">
     <a href="/blog/{{ topic }}/" class="text-accent hover:text-accent-hover no-underline text-sm font-medium transition-colors">
-      ← More {{ topic }} posts
+      ← More {{ topic | topicIcon }} {{ topic }} posts
     </a>
   </footer>
 </article>
