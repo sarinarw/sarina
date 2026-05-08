@@ -58,7 +58,7 @@ src/
 public/
   admin/                  # Decap CMS
 src/
-  filters.js              # custom Eleventy filters (postDate, isoDate, limit)
+  filters.js              # custom Eleventy filters (postDate, isoDate, limit, topicIcon, filterByTopic)
   collections.js          # collection helpers (uniqueTopics, uniqueTags)
 tests/                    # Vitest unit tests
 ```
@@ -82,6 +82,17 @@ Post content here.
 ```
 
 The topic value determines the URL (`/blog/tech/slug/`) and auto-creates the topic index page if it doesn't exist yet.
+
+To add an icon for a new topic, add an entry to the `icons` map in `src/filters.js`:
+
+```js
+function topicIcon(topic) {
+  const icons = { tech: "💻", gardening: "🌱", cooking: "🍳" };
+  return icons[topic] || "";
+}
+```
+
+The icon appears in the blog index, topic index page heading, post breadcrumb, and homepage listing. Topics without an entry render without an icon.
 
 ### New project
 
@@ -120,7 +131,7 @@ Browse to `/admin/` and sign in with Netlify Identity. The CMS supports both blo
 npm test
 ```
 
-Unit tests cover the custom Eleventy filters (`postDate`, `isoDate`, `limit`) and collection helpers (`uniqueTopics`, `uniqueTags`). 15 tests, no external dependencies.
+Unit tests cover the custom Eleventy filters (`postDate`, `isoDate`, `limit`, `filterByTopic`, `topicIcon`) and collection helpers (`uniqueTopics`, `uniqueTags`). 21 tests, no external dependencies.
 
 ## Deploy
 
