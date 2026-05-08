@@ -3,7 +3,7 @@ title: Claude Code Superpowers — Skills for Structured Development
 description: What the Claude Code "superpowers" plugin system is and how it guided the build of this site.
 date: 2026-05-07
 topic: tech
-tags: [claude, meta, tools]
+tags: [claude, meta, tools, ai]
 ---
 
 When I rebuilt this site with Claude Code, I didn't just hand it a prompt and let it go. The whole process ran through something called "superpowers" — a plugin system for Claude Code that packages reusable workflows as invokable skills.

@@ -3,7 +3,7 @@ title: Getting Started with This Site
 description: How I rebuilt this site from scratch using Claude Code — and what that process actually looked like.
 date: 2026-05-07
 topic: tech
-tags: [meta, claude, eleventy]
+tags: [meta, claude, eleventy, ai]
 ---
 
 This site is a rebuild. The previous version was a generic Eleventy boilerplate from 2020: Eleventy 0.11, EJS templates, Tailwind v1.6, Webpack. It worked, but it was a stranger's code and I never really touched it.
