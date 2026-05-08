@@ -24,6 +24,9 @@ module.exports = function (eleventyConfig) {
     return new Date(dateObj).toISOString();
   });
 
+  // Return the first N items of an array (Nunjucks slice() chunks, not trims)
+  eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
+
   // All blog posts sorted newest-first
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi

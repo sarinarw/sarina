@@ -17,7 +17,7 @@ title: Home
     <a href="/blog/" class="text-sm text-accent hover:text-accent-hover no-underline font-medium transition-colors">All posts →</a>
   </div>
 
-  {% set recentPosts = collections.posts | slice(0, 5) %}
+  {% set recentPosts = collections.posts | limit(5) %}
 
   {% if recentPosts.length == 0 %}
     <p class="text-text-muted">No posts yet. Check back soon.</p>
