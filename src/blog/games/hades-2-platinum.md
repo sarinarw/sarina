@@ -38,6 +38,10 @@ The last stretch of cleanup was the most tedious, as it always is with platinums
 
 ## Worth it?
 
-Yes. It's a great game. Harder than the first, more to dig into, and the story continues to be excellent. The platinum didn't feel like a chore to get — it felt like a reason to stay in the game longer than I might have otherwise.
+Yes, mostly. It's a great game, harder than the first and more to dig into, and if you liked the first game's story you'll enjoy this one too.
 
-If you're on the fence about going for the platinum: the game guides you toward it pretty naturally. You'll get most of it just by playing thoroughly.
+Honest caveat on the platinum: it did start to feel like a chore toward the end. A chunk of the late progress is tied to dialogue, which means running the same content repeatedly just to nudge conversations forward. That wore on me more than the combat grind did.
+
+The buffed boss fights were the most frustrating part. Once you encounter them you'll know what I mean. They're doable, but I found them more annoying than satisfying.
+
+If you're on the fence about going for the platinum: the game guides you toward it fairly naturally for most of it. The back end is where it starts to drag.
