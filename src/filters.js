@@ -20,7 +20,7 @@ function filterByTopic(posts, topic) {
 }
 
 function topicIcon(topic) {
-  const icons = { tech: "💻", gardening: "🌱" };
+  const icons = { tech: "💻", gardening: "🌱", games: "🎮" };
   return icons[topic] || "";
 }
 
