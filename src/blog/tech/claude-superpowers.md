@@ -10,7 +10,7 @@ When I rebuilt this site with Claude Code, I didn't just hand it a prompt and le
 
 ## What superpowers are
 
-A skill is a Markdown file with structured instructions: a process with steps, decision trees, red flags, examples. When you invoke one, Claude Code loads it into context and follows it as a behavioral guide for whatever you're doing.
+The "superpowers" are a set of Claude skills. A skill is a Markdown file with structured instructions: a process with steps, decision trees, red flags, examples. When you invoke one, Claude Code loads it into context and follows it as a behavioral guide for whatever you're doing.
 
 The idea is that instead of re-explaining "here's how I want you to approach planning" every session, you encode that once and invoke it with a slash command. Skills are installed as a plugin and invoked with `/superpowers:<skill-name>`. The agent checks for relevant skills before taking any action, including before asking clarifying questions.
 
@@ -32,4 +32,4 @@ The structured workflow also creates checkpoints that a freeform conversation sk
 
 The tradeoff is that it's slower to start. Answering questions one at a time and waiting for a plan before any code runs felt inefficient at first. But the back half went fast, and there was no "I thought you meant..." conversation at hour three.
 
-The superpowers plugin isn't public yet, but the underlying approach — encode your workflow expectations as skills, fresh context per task, explicit review gates — is something you can do in any Claude Code session with enough care in how you write your prompts.
+The superpowers plugin is an official Claude plugin that can be installed via the `/plugin` skill, or additional ways specified here: [https://github.com/obra/superpowers](https://github.com/obra/superpowers).
