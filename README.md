@@ -1,149 +1,127 @@
-# Eleventy Starter Boilerplate
+# sarinawhite.com
 
-<p align="center">
-  <a href="https://creativedesignsguru.com/demo/Eleventy-Starter-Boilerplate/eleventy-starter-boilerplate-presentation/"><img src="public/assets/images/eleventy-js-starter-boilerplate.png?raw=true" alt="Eleventy starter banner"></a>
-</p>
+Personal portfolio and blog for Sarina White. Built with Eleventy 3.x, Tailwind CSS v3, and Pagefind.
 
-🚀 Eleventy Starter Boilerplate is production-ready with SEO-friendly for quickly starting a blog. ⚡️ Built with [Eleventy](https://www.11ty.dev), [ESLint](https://eslint.org), [Prettier](https://prettier.io), [Webpack](https://webpack.js.org), [PostCSS](https://postcss.org), [Tailwind CSS](https://tailwindcss.com) and [Netlify CMS](https://www.netlifycms.org) (optional).
+## Stack
 
-Clone this project and use it to create your own [Eleventy](https://www.11ty.dev) blog. You can check a [Eleventy templates demo](https://creativedesignsguru.com/demo/Eleventy-Starter-Boilerplate/eleventy-starter-boilerplate-presentation/).
+| Concern | Tool |
+|---------|------|
+| Static site generator | [Eleventy 3.x](https://www.11ty.dev) |
+| Templates | Nunjucks |
+| CSS | [Tailwind CSS v3](https://tailwindcss.com) via PostCSS |
+| Search | [Pagefind](https://pagefind.app) (build-time, client-side) |
+| CMS | [Decap CMS](https://decapcms.org) at `/admin/` (optional) |
+| Hosting | Netlify |
 
-### Features
+## Commands
 
-Production-ready in mind:
-
-- 🔥 [11ty](https://www.11ty.dev) for Static Site Generator
-- 🎨 Integrate with [Tailwind CSS](https://tailwindcss.com) (with [PurgeCSS](https://purgecss.com), remove unused CSS)
-- 💅 [PostCSS](https://postcss.org) for processing [Tailwind CSS](https://tailwindcss.com)
-- ⚡️ Lazy load images with [lazysizes](https://github.com/aFarkas/lazysizes)
-- ✨ Compress image with [Imagemin](https://github.com/imagemin/imagemin)
-- 🎈 Syntax Highlighting with [Prism.js](https://prismjs.com)
-- ☕ Minify HTML & CSS with [HTMLMinifier](https://www.npmjs.com/package/html-minifier) and [cssnano](https://cssnano.co)
-- ✏️ Linter with [ESLint](https://eslint.org)
-- 🛠 Code Formatter with [Prettier](https://prettier.io)
-- 💨 Live reload
-- 📦 Module Bundler with [Webpack](https://webpack.js.org)
-- 🦊 Templating with [EJS](https://ejs.co)
-- 🤖 SEO metadata and [Open Graph](https://ogp.me/) tags
-- ⚙️ [JSON-LD](https://developers.google.com/search/docs/guides/intro-structured-data) for richer indexing
-- 🗺 Sitemap.xml
-- ⚠️ 404 page
-- 📖 Pagination
-- ✅ Cache busting
-- 💯 Maximize lighthouse score
-- 🌈 Include a FREE minimalist blog theme
-- 🗒 Netlify CMS (optional)
-
-### Philosophy
-
-- Minimal code (HTML, CSS & JS). Add what you need
-- SEO-friendly
-- 🚀 Production-ready
-
-### Requirements
-
-- Node.js and npm
-
-### Premium Themes ([Eleventy Themes](https://creativedesignsguru.com/category/eleventy/))
-
-| [Blue Dark Eleventy Theme](https://creativedesignsguru.com/blue-dark-eleventy-theme/) | [Blue Eclatant Eleventy Theme](https://creativedesignsguru.com/blue-eclatant-eleventy-theme/) |
-| --- | --- |
-| [![Blue Dark Eleventy Theme premium](https://creativedesignsguru.com/assets/images/themes/blue-dark-mode-eleventy-theme-homepage-xs.png)](https://creativedesignsguru.com/blue-dark-eleventy-theme/) | [![Blue Eclatant Eleventy Theme premium](https://creativedesignsguru.com/assets/images/themes/eclatant-blue-eleventy-theme-homepage-xs.png)](https://creativedesignsguru.com/blue-eclatant-eleventy-theme/) |
-
-| [Blue Modern Eleventy Theme](https://creativedesignsguru.com/blue-modern-eleventy-theme/) | [Blue Minimalist Eleventy Theme](https://creativedesignsguru.com/blue-minimalist-eleventy-theme/) |
-| --- | --- |
-| [![Blue Modern Eleventy Theme premium](https://creativedesignsguru.com/assets/images/themes/modern-blue-eleventy-theme-homepage-xs.png)](https://creativedesignsguru.com/blue-modern-eleventy-theme/) | [![Blue Minimalist Eleventy Theme premium](https://creativedesignsguru.com/assets/images/themes/minimalist-blue-eleventy-theme-homepage-xs.png)](https://creativedesignsguru.com/blue-minimalist-eleventy-theme/) |
-
-### Getting started
-
-Run the following command on your local environment:
-
-```
-git clone --depth=1 https://github.com/ixartz/Eleventy-Starter-Boilerplate.git my-project-name
-cd my-project-name
-npm install
+```bash
+npm run dev      # dev server with live reload + CSS watch
+npm run build    # production build (Eleventy + PostCSS + Pagefind index)
+npm run clean    # delete _site/
+npm test         # run unit tests (Vitest)
+npm run format   # format with Prettier
 ```
 
-Then, you can run locally in development mode with live reload:
+Dev server runs at `http://localhost:8080`.
+
+## Project structure
 
 ```
-npm run dev
+src/
+  _data/
+    site.json             # site-wide metadata (name, URL, social links)
+  _includes/
+    layouts/
+      base.njk            # master HTML layout
+      post.njk            # blog post layout
+    components/
+      nav.njk
+      post-card.njk
+      project-card.njk
+      tag-pill.njk
+  blog/
+    [topic]/[slug].md     # posts live under their topic folder
+  projects/
+    [slug].md             # project entries (no individual detail pages)
+  assets/styles/
+    main.css              # Tailwind entry point
+  index.njk               # homepage
+  blog.njk                # paginated blog index
+  topic-index.njk         # auto-generates /blog/[topic]/ pages
+  tag-index.njk           # auto-generates /tags/[tag]/ pages
+  about.md
+  search.njk
+  404.md
+  sitemap.njk
+  robots.njk
+public/
+  admin/                  # Decap CMS
+src/
+  filters.js              # custom Eleventy filters (postDate, isoDate, limit)
+  collections.js          # collection helpers (uniqueTopics, uniqueTags)
+tests/                    # Vitest unit tests
 ```
 
-Open http://localhost:8080 with your favorite browser to see your blog.
+## Writing content
 
-### Project structure
+### New blog post
 
-```
-.
-├── public             # Static files
-│   └── assets
-│       └── images     # Images not needed by Webpack
-└── src
-    ├── _data          # Eleventy data folder
-    ├── _includes
-    │   └── layouts    # HTML layout files
-    ├── assets         # Assets folder that needs to be processed by Webpack
-    │   ├── images
-    │   │   └── posts  # Images used in your blog posts (will be compressed by Webpack)
-    │   └── styles     # Your blog CSS files
-    └── posts          # Your blog posts
-```
+Create `src/blog/[topic]/[slug].md`:
 
-### Customization
-
-You can easily configure Eleventy Starter Boilerplate. Please change the following file:
-
-- `public/assets/images/logo.png`: your blog logo
-- `public/apple-touch-icon.png`, `public/favicon.ico`, `public/favicon-16x16.png` and `public/favicon-32x32.png`: your blog favicon, you can generate from https://favicon.io/favicon-converter/
-- `src/_data/site.json`: your blog configuration
-- `src/_includes/layouts`: your blog HTML layout
-- `src/assets/styles/main.css`: your blog CSS file using Tailwind CSS
-
-### Deploy to production
-
-You can see the results locally in production mode with:
-
-```
-npm run serve
-```
-
-The generated HTML and CSS files are minified. It will also removed unused CSS from [Tailwind CSS](https://tailwindcss.com).
-
-You can create an optimized production build with:
-
-```
-npm run build
-```
-
-Now, your blog is ready to be deployed. All generated files are located at `_site` folder, which you can deploy with any hosting service.
-
-### Deploy to Netlify
-
-Clone this repository on own GitHub account and deploy to Netlify:
-
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ixartz/Eleventy-Starter-Boilerplate&stack=cms)
-
-### Remove Netlify files and Netlify CMS
-
-If you don't use Netlify, you can easily remove all Netlify related files:
-
-- `public/admin`, the entier folder
-- `src/_includes/layouts/base.ejs`, the loaded script `netlify-identity-widget.js` and the inline script `if (window.netlifyIdentity) { ...`
-- `netlify.toml`, the entire file
-
-### Contributions
-
-Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
-
-### License
-
-Licensed under the MIT License, Copyright © 2020
-
-See [LICENSE](LICENSE) for more information.
-
+```markdown
+---
+title: Post Title
+description: One-line summary shown in listings
+date: 2026-05-07
+topic: tech
+tags: [rust, systems]
 ---
 
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com)
+Post content here.
+```
 
-[![Sponsor Next JS Boilerplate](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://www.buymeacoffee.com/ixartz)
+The topic value determines the URL (`/blog/tech/slug/`) and auto-creates the topic index page if it doesn't exist yet.
+
+### New project
+
+Create `src/projects/[slug].md`:
+
+```markdown
+---
+title: Project Name
+description: One-line summary shown on the card
+url: https://github.com/...
+date: 2026-01-01
+status: active
+tags: [rust]
+---
+
+Extended description (optional, shown on the card).
+```
+
+`status` can be `active`, `completed`, or `archived`. No individual project detail page is generated.
+
+### Via Decap CMS
+
+Browse to `/admin/` and sign in with Netlify Identity. The CMS supports both blog posts and projects.
+
+## Customization
+
+- **Site metadata:** `src/_data/site.json`
+- **Colors/fonts:** `tailwind.config.js`
+- **CSS:** `src/assets/styles/main.css`
+- **Layouts:** `src/_includes/layouts/`
+- **Filters/collections:** `src/filters.js`, `src/collections.js`, `eleventy.config.js`
+
+## Tests
+
+```bash
+npm test
+```
+
+Unit tests cover the custom Eleventy filters (`postDate`, `isoDate`, `limit`) and collection helpers (`uniqueTopics`, `uniqueTags`). 15 tests, no external dependencies.
+
+## Deploy
+
+The site deploys automatically to Netlify on push to `master`. Build command: `npm run build`. Publish directory: `_site`.
