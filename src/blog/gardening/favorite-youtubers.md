@@ -32,7 +32,7 @@ Kevin Espiritu's channel is the largest of the bunch and the broadest. If I want
 
 The climate is very different from mine (San Diego), so I take the seasonal timing and watering guidance with a grain of salt. But the underlying principles and experiments are interesting, and the [Epic Homesteading](https://www.youtube.com/@EpicHomesteading) spin-off is worth watching too.
 
-### [Millenial Gardener](https://www.youtube.com/@TheMillennialGardener)
+### [Millennial Gardener](https://www.youtube.com/@TheMillennialGardener)
 
 Good for the mindset and reasoning behind decisions rather than just the steps. The pacing is unhurried and the seasonal honesty — things die, experiments fail — makes the wins feel credible. Again, different climate, so I'm watching for the approach rather than following the specifics directly.
 
