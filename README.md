@@ -35,6 +35,7 @@ src/
     layouts/
       base.njk            # master HTML layout
       post.njk            # blog post layout
+      page.njk            # static content pages (about, etc.) — adds prose-content wrapper
     components/
       nav.njk
       post-card.njk
@@ -122,7 +123,7 @@ Browse to `/admin/` and sign in with Netlify Identity. The CMS supports both blo
 - **Site metadata:** `src/_data/site.json`
 - **Colors/fonts:** `tailwind.config.js`
 - **CSS:** `src/assets/styles/main.css`
-- **Layouts:** `src/_includes/layouts/`
+- **Layouts:** `src/_includes/layouts/` — use `page.njk` for static content pages, `post.njk` for blog posts
 - **Filters/collections:** `src/filters.js`, `src/collections.js`, `eleventy.config.js`
 
 ## Tests
