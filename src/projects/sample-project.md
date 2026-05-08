@@ -1,7 +1,7 @@
 ---
 title: This Site
 description: Personal portfolio and blog built with Eleventy 3.x, Tailwind CSS v3, and Pagefind.
-url: https://github.com/sarinarw/sarinawhite-eleventy
+url: https://github.com/sarinarw/sarina
 date: 2026-05-07
 status: active
 tags: [eleventy, web]
