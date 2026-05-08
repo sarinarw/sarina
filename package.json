@@ -4,7 +4,7 @@
   "description": "Sarina White's personal site",
   "scripts": {
     "dev": "concurrently \"npx @11ty/eleventy --serve --incremental\" \"postcss src/assets/styles/main.css -o _site/assets/styles/main.css --watch\"",
-    "build": "npx @11ty/eleventy && postcss src/assets/styles/main.css -o _site/assets/styles/main.css && npx pagefind --site _site",
+    "build": "npx @11ty/eleventy && postcss src/assets/styles/main.css -o _site/assets/styles/main.css && npx pagefind --site _site --output-subdir _pagefind",
     "clean": "rimraf _site",
     "format": "prettier '**/*.{js,json,njk,md}' --write --ignore-path .prettierignore"
   },
