@@ -16,17 +16,29 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("filterByTopic", filterByTopic);
   eleventyConfig.addFilter("topicIcon", topicIcon);
 
-  eleventyConfig.addCollection("posts", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/blog/**/*.md").sort((a, b) => b.date - a.date)
-  );
+  eleventyConfig.addCollection("posts", (collectionApi) => {
+    const now = new Date();
+    return collectionApi
+      .getFilteredByGlob("src/blog/**/*.md")
+      .filter((p) => p.date <= now)
+      .sort((a, b) => b.date - a.date);
+  });
 
-  eleventyConfig.addCollection("topicList", (collectionApi) =>
-    uniqueTopics(collectionApi.getFilteredByGlob("src/blog/**/*.md"))
-  );
+  eleventyConfig.addCollection("topicList", (collectionApi) => {
+    const now = new Date();
+    const published = collectionApi
+      .getFilteredByGlob("src/blog/**/*.md")
+      .filter((p) => p.date <= now);
+    return uniqueTopics(published);
+  });
 
-  eleventyConfig.addCollection("tagList", (collectionApi) =>
-    uniqueTags(collectionApi.getFilteredByGlob("src/blog/**/*.md"))
-  );
+  eleventyConfig.addCollection("tagList", (collectionApi) => {
+    const now = new Date();
+    const published = collectionApi
+      .getFilteredByGlob("src/blog/**/*.md")
+      .filter((p) => p.date <= now);
+    return uniqueTags(published);
+  });
 
   eleventyConfig.addCollection("projects", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/projects/*.md").sort((a, b) => b.date - a.date)
