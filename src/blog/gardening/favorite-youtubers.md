@@ -6,27 +6,25 @@ topic: gardening
 tags: [youtube, resources, desert]
 ---
 
-Most of what I've learned about gardening came from YouTube before it came from the garden. One thing I learned quickly: **climate matters enormously**, and a lot of mainstream gardening advice assumes you live somewhere with rain and moderate summers. If you're in the desert, standard watering rules will kill your plants. Finding channels that garden in similar conditions to yours is worth more than any general-audience advice.
+Most of what I've learned about gardening came from YouTube before it came from the garden. One thing I learned quickly: climate matters enormously, and a lot of mainstream gardening advice assumes you live somewhere with rain and moderate summers. If you're in the desert, standard watering rules will kill your plants. Finding channels that garden in similar conditions to yours is worth more than any general-audience advice.
 
-Here's how I think about the channels I watch.
-
-## Desert-Applicable (the ones I trust for actual decisions)
+## Desert-applicable (the ones I trust for actual decisions)
 
 ### Edge of Nowhere Farm
 
-My favorite. They're on the outskirts of Phoenix, which has a climate close enough to mine that I can take their advice and learnings and apply them fairly directly. When they say something works or doesn't work, I believe it will probably work or not work for me too. That's rare.
+My favorite. They're on the outskirts of Phoenix, which has a climate close enough to mine that I can take their advice and apply it fairly directly. When they say something works or doesn't work, I believe it will probably work or not work for me too. That's rare.
 
-The production style is unpolished in a good way — it feels like following someone who's actually farming rather than performing farming. And the scale is larger than a backyard garden, which gives you a longer-term view on soil health, perennials, and water management that's genuinely useful even at a smaller scale.
+The production style is unpolished in a good way — it feels like following someone who's actually farming rather than performing farming. And the scale is larger than a backyard garden, which gives you a longer view on soil health, perennials, and water management that's useful even at a smaller scale.
 
 ### Growing in the Garden
 
-Phoenix-based, focused on the desert Southwest. Practical and specific to the region — planting schedules, what varieties actually survive the heat, how to handle the two growing seasons (we don't have one long summer season like most of the country). If you're in the Southwest and want advice you can act on, this is a great resource.
+Phoenix-based, focused on the desert Southwest. Practical and specific to the region: planting schedules, what varieties actually survive the heat, how to handle the two growing seasons (we don't have one long summer season like most of the country).
 
 ### Enlightenment Garden
 
 Also out of Phoenix. Goes deeper on desert-adapted plants, native species, and low-water gardening than the others. Useful if you're thinking about long-term water efficiency or want to incorporate plants that genuinely belong in this climate rather than fighting it.
 
-## Fun and Educational (different climate, still worth watching)
+## Fun and educational (different climate, still worth watching)
 
 ### Epic Gardening
 
