@@ -38,10 +38,8 @@ The last stretch of cleanup was the most tedious, as it always is with platinums
 
 ## Worth it?
 
-Yes, mostly. It's a great game, harder than the first and more to dig into, and if you liked the first game's story you'll enjoy this one too.
+The game itself: yes, absolutely. If you liked Hades 1 or the gameplay looks interesting to you at all, play it. It's great.
 
-Honest caveat on the platinum: it did start to feel like a chore toward the end. A chunk of the late progress is tied to dialogue, which means running the same content repeatedly just to nudge conversations forward. That wore on me more than the combat grind did.
+The platinum: less sure. It did start to feel like a chore toward the end — a chunk of late progress is tied to dialogue, which means running the same content repeatedly just to nudge conversations forward. That wore on me more than the combat grind did. The buffed boss fights were the most frustrating part too. Once you encounter them you'll know what I mean.
 
-The buffed boss fights were the most frustrating part. Once you encounter them you'll know what I mean. They're doable, but I found them more annoying than satisfying.
-
-If you're on the fence about going for the platinum: the game guides you toward it fairly naturally for most of it. The back end is where it starts to drag.
+So: play the game, get as far as feels fun, and decide on the platinum from there. Don't go in treating it as a given.
