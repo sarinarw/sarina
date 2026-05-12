@@ -6,7 +6,7 @@ topic: games
 tags: [plantera, playstation, platinum, idle, casual]
 ---
 
-Got the Plantera 2 platinum on PS5 recently. A few hours of active play, one overnight idle session, done.
+Got the [Plantera 2](https://store.playstation.com/en-us/concept/10018303) platinum on PS5 recently. A few hours of active play, one overnight idle session, done.
 
 ## Coming in from Plantera 1
 

@@ -6,11 +6,13 @@ topic: games
 tags: [hades, playstation, platinum, roguelike]
 ---
 
-Got the Hades 2 platinum on PS5 on May 3rd. April 16 to May 3, about 80 hours. Some notes while it's fresh.
+*Links marked with \* are affiliate links — I may earn a small commission if you purchase through them, at no extra cost to you.*
+
+Got the [Hades 2](https://store.playstation.com/en-us/concept/10018449) platinum on PS5 on May 3rd. April 16 to May 3, about 80 hours. Some notes while it's fresh.
 
 ## Coming in from Hades 1
 
-I'd already played through Hades 1 so I wasn't starting cold. I had a sense of how the loop works, how to read boons, how to think about builds. It helped. I still got beat up constantly.
+I'd already played through [Hades 1*](https://amzn.to/4d4S24r) ([digital](https://store.playstation.com/en-us/product/UP2125-PPSA03355_00-3466019145463410)) so I wasn't starting cold. I had a sense of how the loop works, how to read boons, how to think about builds. It helped. I still got beat up constantly.
 
 Hades 2 is harder, and I think it's specifically because the battle system has more going on. More options, more interactions, more things to track mid-run. In Hades 1 you develop a feel for the system and it becomes second nature. In Hades 2 that ceiling is higher, which is fun once you're over it, but the path to "over it" is longer.
 
